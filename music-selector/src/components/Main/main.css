@@ -1,0 +1,54 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.add_button {
+  transform: translate(-200%, 50%);
+}
+
+.container {
+  margin-top: 100px;
+  width: 60%;
+  margin-left: 25%;
+}
+
+.number {
+  margin: 7px;
+}
+
+.row_form {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.configure-button {
+  z-index: 200;
+}
+
+.error-label {
+  position: absolute; 
+  bottom: 0%;
+  left: 38%;
+  width: 22%;
+}
+
+.pseudo-relative {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 0;
+  align-items: baseline;
+}
+
+
