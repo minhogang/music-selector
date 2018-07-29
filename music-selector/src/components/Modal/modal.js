@@ -5,6 +5,7 @@ import Aux from '../../hoc/Auxilliary';
 import { Dropdown, Input, Button } from 'semantic-ui-react';
 import * as actions from '../../store/actions/actions'
 import { connect } from 'react-redux';  
+var REGEX = /(.+)\((\d+)\)/;
 
 class Modal extends Component {
     
@@ -57,8 +58,7 @@ class Modal extends Component {
 
     handleComposerChange = ( { value }, rowId ) => {
         const newState = {...this.state}
-        const regex = /(.+)\((\d+)\)/; //Regex for composers such as Beethoven (2)
-        const groups = regex.exec(value);
+        const groups = REGEX.exec(value);
         newState.modalData[rowId].composer = value
         if (parseInt(groups[2]) > parseInt(newState.modalData[rowId].amount)) {
             newState.modalData[rowId].error = false
@@ -70,8 +70,7 @@ class Modal extends Component {
 
     handleInputChange = ( { value }, rowId ) => {
         const newState = {...this.state}
-        const regex = /(.+)\((\d+)\)/; //Same Regex
-        const groups = regex.exec(newState.modalData[rowId].composer)
+        const groups = REGEX.exec(newState.modalData[rowId].composer)
         newState.modalData[rowId].amount = value
         if (parseInt(value) > groups[2]) {
             newState.modalData[rowId].error = true
@@ -133,7 +132,7 @@ class Modal extends Component {
             left: this.props.show ? '20%' : '30%',
             top: this.props.show ? '30%' : '60%',   
             opacity: this.props.show ? '1' : '0',
-            display: this.props.show ? 'block' : 'none'
+            visibility: this.props.show ? 'visible': 'hidden'
         };
         
         return (
