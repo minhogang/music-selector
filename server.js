@@ -28,7 +28,7 @@ app.get('/api/pieces', (req, res) => { /* Fetching from database */
     })
 });
 
-/* Serve the webpack-bundled React app for the home page */
+/* Serve the webpack-bundled React app for the home page. */
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/music-selector/build/index.html')); 
   });
