@@ -28,7 +28,7 @@ app.get('/api/pieces', (req, res) => {
     })
 });
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/music-selector/build/index.html'));
   });
 
