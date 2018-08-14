@@ -1,12 +1,12 @@
 var express = require('express');
 var path = require('path')
 var app = express();
-var url = require('./datauser.js');
+var dataUser = require('./datauser.js');
 var MongoClient = require('mongodb').MongoClient;
 var dbo;
 app.use(express.static(path.join(__dirname, 'music-selector/build')));
 
-MongoClient.connect(url, function (err, db) {
+MongoClient.connect(dataUser.url, function (err, db) {
     if (err) throw err;
     dbo = db.db("music-selection");
     console.log('connected');
