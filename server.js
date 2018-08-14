@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path')
 var app = express();
-var url = 'mongodb://guest-user:guest12345@ds259070.mlab.com:59070/music-selection';
+var url = require('./datauser.js');
 var MongoClient = require('mongodb').MongoClient;
 var dbo;
 app.use(express.static(path.join(__dirname, 'music-selector/build')));
