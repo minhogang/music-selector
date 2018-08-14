@@ -13,7 +13,7 @@ MongoClient.connect(url, function (err, db) {
         if (err) throw err;
     })
 })
-app.get('/api/pieces', (req, res) => {
+app.get('/api/pieces', (req, res) => { /* Fetching from database */
     var pieces;
     const param = req.query.grade;
     if (!param) {
@@ -28,8 +28,9 @@ app.get('/api/pieces', (req, res) => {
     })
 });
 
+/* Serve the webpack-bundled React app for the home page */
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/music-selector/build/index.html'));
+    res.sendFile(path.join(__dirname + '/music-selector/build/index.html')); 
   });
 
 app.listen(process.env.PORT || 3000, () => console.log('server is running'))
