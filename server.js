@@ -1,5 +1,5 @@
 var express = require('express');
-var path - require('path')
+var path = require('path')
 var app = express();
 var url = 'mongodb://guest-user:guest12345@ds259070.mlab.com:59070/music-selection';
 var MongoClient = require('mongodb').MongoClient;
