@@ -4,6 +4,7 @@ var app = express();
 var url = 'mongodb://guest-user:guest12345@ds259070.mlab.com:59070/music-selection';
 var MongoClient = require('mongodb').MongoClient;
 var dbo;
+app.use(express.static(path.join(__dirname, 'music-selector/build')));
 
 MongoClient.connect(url, function (err, db) {
     if (err) throw err;
