@@ -78,6 +78,7 @@ class Generate extends Component {
     }
 
     openAll = () => {
+        alert("Pop up blocker may block the files being opened");
         this.state.pieces.forEach(obj => {
             localStorage.setItem(obj.piece, null)
             window.open(`https://www.google.com/search?q=${obj.composer} ${obj.piece} imslp`)
