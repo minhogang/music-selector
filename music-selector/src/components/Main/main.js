@@ -26,8 +26,8 @@ class Main extends Component {
 		this.props.onGenerate();
 	}
 
-	handleKeyPress = (e) => {
-		if (e.which === 8) { return }
+	handleKeyPress = (e) => { /* Only allow users to enter numbers */
+		if (e.which === 8) { return } 
 		if (e.which < 48 || e.which > 57) {
 			e.preventDefault();
 		}

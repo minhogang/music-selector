@@ -104,7 +104,7 @@ class Modal extends Component {
         for (let data in this.state.modalData) { //Create row elements and add event handlers
             const rowId = data
             const rowElement = 
-                <Aux key={data}>
+                <Aux key={data}> {/* Must use key property so that component updates     */}
                     <Dropdown 
                     className='Dropdown Element'
                     placeholder='Select Composer'
