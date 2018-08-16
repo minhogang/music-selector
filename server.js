@@ -4,7 +4,7 @@ var app = express();
 var dataUser = process.env.MLAB_DATABASE_URL /* Config environment var from Heroku */
 var MongoClient = require('mongodb').MongoClient;
 var dbo;
-app.use(express.static(path.join(__dirname, 'music-selector/build')));
+app.use(express.static(path.join(__dirname, 'music-selector/build'))); /* Tell Express to use static bundled files in /build directory */
 
 MongoClient.connect(dataUser, function (err, db) { /* Connect to mongo database */
     if (err) throw err;
